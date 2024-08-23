@@ -75,7 +75,7 @@ export default function OtpVerification() {
   };
 
   if (redirect) {
-    return <Navigate to="LandingPage/" />;
+    return <Navigate to="/LandingPage/" />;
   }
 
   return (

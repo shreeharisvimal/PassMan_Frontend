@@ -19,7 +19,7 @@ export default function LandingPage() {
     const token = localStorage.getItem('AccessToken');
     try {
       const res = await AuthAxios.post(
-        'logout/',
+        'user_authentication/logout/',
         { refresh_token: refresh_token },
         {
           headers: {

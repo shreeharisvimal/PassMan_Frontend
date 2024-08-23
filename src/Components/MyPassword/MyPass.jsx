@@ -10,7 +10,7 @@ function MyPass() {
       try {
         const response = await AuthAxios.get('password/new_password');
         if (response.status === 200) {
-          setPasswords(response.data.passwords); // Ensure 'passwords' matches the API response key
+          setPasswords(response.data.passwords); 
         }
       } catch (error) {
         console.error('Error fetching passwords:', error);
@@ -21,8 +21,9 @@ function MyPass() {
   }, []);
 
   const handleDelete = async (id) => {
+    console.log(id)
     try {
-      const response = await AuthAxios.delete(`password/${id}/`); // Adjust endpoint as needed
+      const response = await AuthAxios.delete(`password/new_password/${id}/`);
       if (response.status === 204) {
         setPasswords(passwords.filter(password => password.id !== id));
       }
