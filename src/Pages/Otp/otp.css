@@ -1,0 +1,117 @@
+body {
+	background-color: #000000;
+	margin: 0;
+	font-family: 'Arial', sans-serif;
+}
+
+.otp-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background: linear-gradient(135deg, #1c1c1c, #000000);
+	color: #ffd277;
+	padding: 20px;
+}
+
+.otp-header {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.otp-header h1 {
+	font-size: 2.5rem;
+	color: #ffd277;
+	margin-bottom: 10px;
+}
+
+.otp-header p {
+	font-size: 1.2rem;
+	color: #ffd277;
+	font-style: italic;
+}
+
+.otp-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 30%;
+	max-width: 400px;
+	background-color: #1c1c1c;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(255, 210, 119, 0.2);
+}
+
+.otp-input-container {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	margin-bottom: 20px; 
+}
+
+.otp-input {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	font-size: 18px;
+	border: 1px solid #ffd277;
+	border-radius: 5px;
+	margin-left: 7px;
+	background-color: #333;
+	color: #ffd277;
+	outline: none;
+}
+
+.otp-input:focus {
+	border-color: #ffd277; 
+	box-shadow: 0 0 15px #ffd277; 
+}
+
+.Btn {
+	width: 340px;
+	height: 80px;
+	border: none;
+	border-radius: 10px;
+	background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+	background-size: 250%;
+	background-position: left;
+	color: #ffd277;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition-duration: 1s;
+	overflow: hidden;
+}
+
+.Btn::before {
+	position: absolute;
+	content: "SIGN IN / SIGN UP";
+	color: #ffd277;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 97%;
+	height: 90%;
+	border-radius: 8px;
+	transition-duration: 1s;
+	background-color: rgba(0, 0, 0, 0.842);
+	background-size: 200%;
+}
+
+.Btn:hover {
+	background-position: right;
+	transition-duration: 1s;
+}
+
+.Btn:hover::before {
+	background-position: right;
+	transition-duration: 1s;
+}
+
+.Btn:active {
+	transform: scale(1.3);
+}

@@ -1,0 +1,119 @@
+body {
+	background-color: #000000;
+}
+
+.login-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: #000000;
+}
+
+.login-box {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+	padding: 40px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	text-align: center;
+	width: 80%;
+	max-width: 400px;
+}
+
+.login-header {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.login-header h1 {
+	font-size: 2.5rem;
+	color: #ffd277;
+	margin-bottom: 10px;
+}
+
+.login-header p {
+	font-size: 1.2rem;
+	color: #ffd277;
+	font-style: italic;
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.input-group {
+	margin-bottom: 15px;
+}
+
+label {
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #ffd277;
+}
+
+input[type="text"] {
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ffd277;
+	border-radius: 5px;
+	width: 100%;
+	background-color: #333;
+	color: #ffd277;
+}
+
+input[type="text"]:focus {
+	border-color: #ffd277; 
+	box-shadow: 0 0 15px #ffd277; 
+	outline: none;
+}
+
+.Btn1 {
+	width: 105%;
+	height: 50px;
+	border: none;
+	border-radius: 10px;
+	background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+	background-size: 250%;
+	background-position: left;
+	color: #ffd277;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition-duration: 1s;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+.Btn1::before {
+	position: absolute;
+	content: "SIGN IN / SIGN UP";
+	color: #ffd277;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 97%;
+	height: 90%;
+	border-radius: 8px;
+	transition-duration: 1s;
+	background-color: rgba(0, 0, 0, 0.842);
+	background-size: 200%;
+}
+
+.Btn1:hover {
+	background-position: right;
+	transition-duration: 1s;
+}
+
+.Btn1:hover::before {
+	background-position: right;
+	transition-duration: 1s;
+}
+
+.Btn1:active {
+	transform: scale(1.3);
+}
