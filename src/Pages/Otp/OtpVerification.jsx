@@ -5,7 +5,6 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useDispatch } from 'react-redux';
 import { get_UserDetails } from '../../Redux/UserSlice';
-
 import './otp.css';
 import { Navigate } from 'react-router-dom';
 
@@ -66,7 +65,9 @@ export default function OtpVerification() {
       }
     } catch (error) {
       if (error.response && error.response.status === 400) {
-        toast.warning("The OTP has expired or is invalid.");
+        toast.warning("otp is invalid.");
+      } else if(error.response && error.response.status === 403) {
+        toast.warning('The OTP has expired')
       } else {
         toast.error("Something went wrong. Please try again.");
       }

@@ -8,10 +8,10 @@ function IsAuthenticated() {
 
 	const dispatch = useDispatch()
   	const AccessToken = localStorage.getItem('AccessToken')
-	if(!AccessToken){
+	if(!AccessToken){	
 		return <Navigate to="/"/>
 	}
-	const currentTime = Date.now() / 1000;
+	let currentTime = Date.now() / 1000;
 	const DecodedAccess = jwtDecode(AccessToken)
 
 	if (DecodedAccess.exp > currentTime) {
@@ -29,7 +29,7 @@ function IsAuthenticated() {
 	}
 	else{
 		localStorage.removeItem('AccessToken')
-		localStorage.clear();
+		localStorage.removeItem('RefreshToken')
 		return false
 	}
 	

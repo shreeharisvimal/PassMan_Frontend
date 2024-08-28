@@ -29,7 +29,8 @@ export default function LandingPage() {
       );
 
       if (res.status === 205) {
-        localStorage.clear();
+        localStorage.removeItem('AccessToken');
+        localStorage.removeItem('RefreshToken');
         AuthAxios.defaults.headers.common['Authorization'] = null;
         navigate('/'); 
       }

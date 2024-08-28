@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import Axios from '../../Api/Axios';
 import './login.css';
+import { toast } from 'react-toastify';
 
 export default function SignInOrSignUp() {
   const [inputValue, setInputValue] = useState('');
@@ -17,11 +18,14 @@ export default function SignInOrSignUp() {
 
   const handleLogin = async () => {
     try {
+      toast.success("Otp  sent to your email");
+
       const response = await Axios.post('user_authentication/login/', { credential: inputValue });
       
       if (response.status === 201) {
         localStorage.setItem('TempUserid', response.data.user_id);
         setRedirect(true);
+
       } else {
         console.error('Unexpected response status:', response.status);
       }
@@ -43,7 +47,7 @@ export default function SignInOrSignUp() {
         </div>
         <form className="login-form" onSubmit={(e) => e.preventDefault()}>
           <div className="input-group">
-            <label htmlFor="email-or-phone">Email or Phone</label>
+            <label htmlFor="email-or-phone">Email</label>
             <input
               type="text"
               id="email-or-phone"
