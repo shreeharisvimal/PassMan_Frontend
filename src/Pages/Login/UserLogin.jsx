@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import Axios from '../../Api/Axios';
 import './login.css';
-import { toast } from 'react-toastify';
 
 export default function SignInOrSignUp() {
   const [inputValue, setInputValue] = useState('');
@@ -18,7 +17,6 @@ export default function SignInOrSignUp() {
 
   const handleLogin = async () => {
     try {
-      toast.success("Otp  sent to your email");
 
       const response = await Axios.post('user_authentication/login/', { credential: inputValue });
       
