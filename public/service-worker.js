@@ -6,7 +6,7 @@ const urlsToCache = [
   '/index.html',
 ];
 
-window.addEventListener('install', (event) => {
+self.addEventListener('install', (event) => {
   console.log('Service Worker installing.');
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -17,7 +17,7 @@ window.addEventListener('install', (event) => {
   );
 });
 
-window.addEventListener('activate', (event) => {
+self.addEventListener('activate', (event) => {
 	console.log('Service Worker activating.');
       
 	const cacheWhitelist = [CACHE_NAME];
@@ -35,7 +35,7 @@ window.addEventListener('activate', (event) => {
 	);
       });
 
-window.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', (event) => {
 	event.respondWith(
 	  caches.match(event.request)
 	    .then((response) => {
