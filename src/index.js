@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { register } from './serviceWorkerRegistration'; 
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 import { Provider } from 'react-redux';
 import { store } from './Redux/Store';
@@ -20,4 +20,4 @@ root.render(
     </BrowserRouter>
 );
 reportWebVitals();
-register();
+serviceWorkerRegistration.register();

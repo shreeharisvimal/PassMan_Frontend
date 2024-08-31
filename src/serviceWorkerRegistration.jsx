@@ -1,4 +1,3 @@
-// src/serviceWorkerRegistration.js
 const isLocalhost = Boolean(
 	window.location.hostname === 'localhost' ||
 	window.location.hostname === '[::1]' ||
@@ -8,7 +7,6 @@ const isLocalhost = Boolean(
       export function register(config) {
 	if ('serviceWorker' in navigator) {
 	  const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-      
 	  if (isLocalhost) {
 	    checkValidServiceWorker(swUrl, config);
 	  } else {
@@ -20,7 +18,7 @@ const isLocalhost = Boolean(
       function registerValidSW(swUrl, config) {
 	navigator.serviceWorker
 	  .register(swUrl)
-	  .then(registration => {
+	  .then((registration) => {
 	    registration.onupdatefound = () => {
 	      const installingWorker = registration.installing;
 	      if (installingWorker == null) {
@@ -37,20 +35,20 @@ const isLocalhost = Boolean(
 	      };
 	    };
 	  })
-	  .catch(error => {
+	  .catch((error) => {
 	    console.error('Error during service worker registration:', error);
 	  });
       }
       
       function checkValidServiceWorker(swUrl, config) {
 	fetch(swUrl)
-	  .then(response => {
+	  .then((response) => {
 	    const contentType = response.headers.get('Content-Type');
 	    if (
 	      response.status === 404 ||
 	      (contentType != null && contentType.indexOf('application/json') === -1)
 	    ) {
-	      navigator.serviceWorker.ready.then(registration => {
+	      navigator.serviceWorker.ready.then((registration) => {
 		registration.unregister().then(() => {
 		  window.location.reload();
 		});
