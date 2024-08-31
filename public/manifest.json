@@ -1,6 +1,8 @@
 {
+  "id": "https://passman.shreeharisvimal.tech/",
   "name": "Passman",
   "short_name": "Passman",
+  "description": "Manage your passwords securely.",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
